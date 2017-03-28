@@ -80,10 +80,6 @@ public class AP2016Q4 {
 	
 		String result = "";
 				
-
-		//CRITICAL:  Use method already completed
-		int total = totalLetters(wordList);
-
 		//CRITICAL:  Use method already completed
 		int basicGap = basicGapWidth(wordList, formattedLen);
 		

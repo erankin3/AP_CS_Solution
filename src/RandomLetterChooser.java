@@ -1,5 +1,3 @@
-import java.util.Arrays;
-
 //THEORY:  Because this class extends RandomStringChooser 
 //				- It inherits all methods and fields. IT DOES NOT INHERIT CONSTRUCTORS
 //				- We have to check the constructors in RandomStringChooser to ensure the super is correct
@@ -20,7 +18,7 @@ public class RandomLetterChooser extends RandomStringChooser {
 	}
 	
 	/**
-	 * I have written this function so that the queston can be coded.  It is not required for the exam. 
+	 * I have written this function so that the question can be coded.  It is not required for the exam. 
 	 * @param str
 	 * @return
 	 */
@@ -31,9 +29,9 @@ public class RandomLetterChooser extends RandomStringChooser {
 		String[] arr = new String[str.length()];
 		
 		for (int i = 0; i < str.length(); i++) {
-			arr[i] = str.substring(i,i+1);
+			//arr[i] = str.substring(i,i+1);
 			//THEORY:	Remember you can cast a character to a string by using add a "" in the front. 
-			//arr[i] = "" + (str.charAt(i));
+			arr[i] = ""+(str.charAt(i));
 		}
 		return arr;
 		//*/
@@ -45,7 +43,7 @@ public class RandomLetterChooser extends RandomStringChooser {
 		//				String sentence = "This is a sentence" 
 		//				String[] words = sentence.split(" "); 
 		//
-		//			woudl generate the array words = {"This","is","a","sentence"}
+		//			would generate the array words = {"This","is","a","sentence"}
 		//
 		//			If we want to break up a word character by character we use and empty string as the parameter. 
 		return str.split("");

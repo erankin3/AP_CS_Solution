@@ -5,27 +5,29 @@ import java.util.ArrayList;
  * @author PMiskew
  *
  */
-//THEORY:  There is no extends explicitly stated so the implied super class is the Object class. 
 public class RandomStringChooser {
 
 	//CRITICAL:  MAKE FIELDS PRIVATE
 	private ArrayList<String> list;
 	
-	//THEORY:  Remember that when a single constructor is written the default constructor no longer exists.
 	public RandomStringChooser(String[] words) {
-		//THEORY:  	There is no super command written in the constructor.  This means that a default super() is
-		//			used here.  This isn't important to this question as the super class is Object
-		//list = new ArrayList<String>();
+		
+		list = new ArrayList<String>();
 
-		//TECHNIQUE:  You could use a for each loop here.  I tend not to.
-		//THEORY:   for (<type> <name in loop>: <Structure to loops through>) {
+		//Approach 1:
+		//TECHNIQUE:  	You could use a for each loop here.  I tend not to.
+		//THEORY:   	For Each Loops
+		//			
+		//				for (<type> <name in loop>: <Structure to loops through>) {
 		//
-		//			}
+		//				}
 		
 		for (String a: words){
 			list.add(a);
 		}
 		//*/
+		
+		//Approach 2:
 		/*
 		for (int i = 0; i < words.length; i++){
 			list.add(words[i]);
@@ -53,12 +55,12 @@ public class RandomStringChooser {
 		int i = (int)(Math.random()*list.size());
 		
 		//WORKS
-		String s = list.get(i);
-		list.remove(i);
-		return s;
+		//String s = list.get(i);
+		//list.remove(i);
+		//return s;
 		
 		//BETTER:  Remember that remove returns a copy of the removed object. 
-		//return list.remove(i)
+		return list.remove(i);
 		
 	}
 	
@@ -73,7 +75,7 @@ public class RandomStringChooser {
 		RandomStringChooser sChooser = new RandomStringChooser(wordArray);
 		
 		for (int k = 0; k < 6; k++) {
-			System.out.println(sChooser.getNext() + " ");
+			System.out.print(sChooser.getNext() + " ");
 		}
 		
 	}

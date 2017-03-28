@@ -1,7 +1,8 @@
 
 
-public class LogMessage {
+public class LogMessage extends Object {
 
+	//CRITICAL: EVERYTHING IS PRIVATE
 	private String machineId;
 	private String description;
 	
@@ -13,21 +14,23 @@ public class LogMessage {
 	public LogMessage(String message){
 		
 		//Solution 1:
-		
-		 
-		/*
+				
 		//TECHNIQUE:  	The built in split method is a nice way to quickly convert a string into an array 
 		// 				based on a specific character as a separator.  
 		String[] words = message.split(":");
+		//example message = "001:error on disk"
+		
+		//words = {"001","error on disk"}
+		
 		machineId = words[0];
 		description = words[1];
 		//*/
 		//Solution 2:
-		int colon = message.indexOf(":");
-		machineId = message.substring(0, colon);
+		//int colon = message.indexOf(":");
+		//machineId = message.substring(0, colon);
 		//TECHNIQUE:  	Remember that substring is an OVERLOADED method.  Passing it a single parameter will
 		//				generate the string including all letters from the index to the end of the string. 
-		description = message.substring(colon+1);
+		//description = message.substring(colon+1);
 			
 	}
 //*************************************************************************************************************
@@ -69,11 +72,11 @@ public class LogMessage {
 		//				the code.  These solution are a nice approach, but be sure not to actually modify 
 		//				the description variable. 
 		//SOLUTION 2:
-		/*
-		return (" " + description+ " ").contains(" " + keyword + " ");
+		
+		//return (" " + description+ " ").contains(" " + keyword + " ");
 		//*/		
 		
-		//SOLUTION 3\
+		//SOLUTION 3
 		//This is a much simplier way to complete this question. 
 		return (" " + description+ " ").indexOf(" " + keyword + " ") >= 0;
 		//*/
@@ -87,17 +90,21 @@ public class LogMessage {
 	 * YOU DO NOT HAVE TO WRITE TOSTRING AS PART OF AP EXAM.  I DID THIS TO HELP WITH THE TEST CODE
 	 * @param entry
 	 */
-	public String toString() {
-		return machineId+":"+description;
-	}
+
 	// There may be instance variables, constructors, and methods that are not shown. 
 	
-
+	public String toString(){
+		return "MONKEY";
+	}
 	/**
 	 * This is tester code for AP CS Free Response Question 2 Part A and B
 	 * @param args
 	 */
 	public static void main(String[] args) {
+		
+		LogMessage lm = new LogMessage("000:fun");
+		System.out.println(lm);
+		/*
 		
 		LogMessage lm1 = new LogMessage("001:disk");	
 		LogMessage lm2 = new LogMessage("002:error on disk");
@@ -151,7 +158,7 @@ public class LogMessage {
 		System.out.println(lm8.machineId);
 		System.out.println(lm8.description);
 		System.out.println(lm8.containsWord("disk")+" EXPECTED FALSE");
-	
+		//*/
 	}
 }
 	

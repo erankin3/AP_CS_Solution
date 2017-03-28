@@ -58,7 +58,7 @@ public class Crossword {
 		
 		//Solution 1: Good
 		
-		 
+		/*
 		//Case 1: If the square is black return false always.
 		if (blackSquares[r][c] == true) return false;
 		
@@ -105,7 +105,7 @@ public class Crossword {
 		 *  		B will not be evaluated if A is true since B being true or false has no 
 		 *  		impact. 
 		 */
-		//return !blackSquares[r][c] && (r == 0 || blackSquares[r-1][c] || c == 0 || blackSquares[r][c-1]);
+		return !blackSquares[r][c] && (r == 0 || blackSquares[r-1][c] || c == 0 || blackSquares[r][c-1]);
 		//*/
 				
 	}

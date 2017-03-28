@@ -47,7 +47,7 @@ public class SystemLog {
 		
 		List<LogMessage> newList = new ArrayList<LogMessage>();
 		//SOLUTION 1:
-		/*
+		
 		for (int i = messageList.size() - 1; i >= 0; i--) {
 			
 			if (messageList.get(i).containsWord(keyword)) {
@@ -59,18 +59,23 @@ public class SystemLog {
 			}
 			
 		}
-		//*/
 		
+		return newList;
+		//*/
+		/*
 		for (int i = 0; i < messageList.size(); i++) {
 			if (messageList.get(i).containsWord(keyword)) {
-				newList.add(messageList.remove(i));
-				i = i - 1;
+				newList.add(messageList.remove(i));  //This is doing two things at once.  removing the LogMessage from 
+													 //message list and since the remove function returns the object that
+													 //is being removed we can pass it right into the add method. 
+				i = i - 1;	//Since we are moving through the list from start to end when we remove adn object all the
+							//elements to the right of the object change indexes
 		
 			}
 		}
 		return newList;
 		
-		
+		//*/
 	}
 
 	/**
@@ -79,6 +84,8 @@ public class SystemLog {
 	 */
 	public String toString() {
 		
+		//TECHNIQUE: Use string construction in the toString then retunr the string when you are done building.  Also 
+		//			 If you need to return multiple lines do that using the \n
 		String str = "";
 		for (int i = 0; i < messageList.size(); i++) {
 			str = str + "\n" + messageList.get(i);
